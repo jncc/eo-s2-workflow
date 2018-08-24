@@ -79,8 +79,7 @@ class GdalTranslate(luigi.Task):
 
     def output(self):
         # outFile =output path/ generated output file name
-        #return LocalTarget(outFile)
-
+        return LocalTarget(outFile)
 
 @requires(RunArcsi)
 class ConvertToTif(luigi.Task):
@@ -124,8 +123,7 @@ class BuildPyramid(luigi.Task):
 
     def output(self):
         # outFile =output path/ generated output file name
-        #return LocalTarget(outFile)
-
+        return LocalTarget(outFile)
 
 @requires(ConvertToTif)
 class BuildPyramids(luigi.Task):
